@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from './image/logo.svg';
 import './style/App.scss';
+import HogeContainer from './containers/hogeContainer';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
+        <HogeContainer />
         <a
           className="App-link"
           href="https://reactjs.org"
