@@ -6,10 +6,12 @@ import Profile from './contents/profile/index';
 
 function App() {
   return (
-    <div className="App">
+    <div className="l-default">
       <GrobalHeader />
-      <img src={logo} className="App-logo" alt="logo" />
-      <Profile />
+      <main className="l-body">
+        <img src={logo} className="App-logo" alt="logo" />
+        <Profile />
+      </main>
     </div>
   );
 }
