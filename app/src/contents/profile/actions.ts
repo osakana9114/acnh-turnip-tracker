@@ -2,7 +2,8 @@ import actionCreatorFactory from 'typescript-fsa';
 
 const actionCreator = actionCreatorFactory();
 
-export const hogeActions = {
+export const profileActions = {
+  updatePlace: actionCreator<string>('ACTIONS_UPDATE_PLACE'),
   updateName: actionCreator<string>('ACTIONS_UPDATE_NAME'),
-  updateEmail: actionCreator<string>('ACTIONS_UPDATE_EMAIL'),
+  updateComment: actionCreator<string>('ACTIONS_UPDATE_COMMENT'),
 };

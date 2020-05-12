@@ -1,12 +1,12 @@
 import { createStore, combineReducers } from 'redux';
-import { hogeReducer, HogeState } from './states/hogeState';
+import { profileReducer, ProfileState } from './contents/profile/reducers';
 export type AppState = {
-  hoge: HogeState;
+  profile: ProfileState;
 };
 
 const store = createStore(
   combineReducers<AppState>({
-    hoge: hogeReducer,
+    profile: profileReducer,
   })
 );
 
