@@ -3,8 +3,8 @@ import ProfileUpdate from './update/container';
 
 function Profile() {
   return (
-    <div>
-      <p>プロフィール</p>
+    <div className="l-page" id="content-profile">
+      <h1>プロフィール</h1>
       <ProfileUpdate />
     </div>
   );

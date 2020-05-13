@@ -1,3 +1,4 @@
+import { Action } from 'typescript-fsa';
 import { connect } from 'react-redux';
 import { AppState } from '../../store';
 import { GrobalHeader } from './component';
