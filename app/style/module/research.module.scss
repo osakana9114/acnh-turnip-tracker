@@ -1,0 +1,10 @@
+@import '../_variable';
+
+.p-research {
+  @include mq(md) {
+    color: orange;
+  }
+  @include mq(lg) {
+    color: blue;
+  }
+}

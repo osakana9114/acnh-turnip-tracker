@@ -1,0 +1,4 @@
+@mixin rect($w: null, $h: null) {
+  width: $w;
+  height: $h;
+}
