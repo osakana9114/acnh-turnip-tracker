@@ -1,10 +1,16 @@
 @import '../_variable';
 
 .p-research {
-  @include mq(md) {
-    color: orange;
-  }
-  @include mq(lg) {
-    color: blue;
+  $prefix: 'breakpoint test ... ';
+  &::after {
+    @include mq(sm) {
+      content: '#{$prefix}sm 375';
+    }
+    @include mq(md) {
+      content: '#{$prefix}md 560';
+    }
+    @include mq(lg) {
+      content: '#{$prefix}lg 960';
+    }
   }
 }
