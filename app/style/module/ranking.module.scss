@@ -1,6 +1,6 @@
 @import '../_variable';
 
-.p-research {
+.p-ranking {
   $prefix: 'breakpoint test ... ';
   &::after {
     @include mq(sm) {

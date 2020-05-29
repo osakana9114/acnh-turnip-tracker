@@ -1,0 +1,13 @@
+@import '../_variable';
+// 全体の枠組み
+.l-page {
+  position: relative;
+
+  min-height: 100vh;
+  color: $c_darkness;
+  background-color: $c_lightness;
+
+  main {
+    margin: size(60) 0;
+  }
+}

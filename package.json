@@ -1,0 +1,14 @@
+{
+  "name": "acnh-turnip-tracker",
+  "version": "0.0.1",
+  "description": "",
+  "keywords": [
+    "あつまれどうぶつの森",
+    "AnimalCrossing",
+    "ACNH"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:osakana9114/acnh-turnip-tracker.git"
+  }
+}

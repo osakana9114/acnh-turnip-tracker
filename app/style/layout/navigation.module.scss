@@ -1,0 +1,42 @@
+@import '../_variable';
+// フッターナビゲーションのモジュールスタイル
+.l-navigation {
+  ul {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    height: size(60);
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    background-color: $c_lightness;
+    li {
+      flex-grow: 1;
+      width: 50%;
+
+      ~ li {
+        margin-left: 1px;
+      }
+
+      a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        font-size: size(10);
+        color: $c_lightness;
+        text-decoration: none;
+        background-color: $c_darkness;
+
+        svg {
+          fill: currentColor;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+@import '../_variable';
+// ヘッターナビゲーションのモジュールスタイル
+.l-header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: size(60);
+  color: $c_lightness;
+  background: $c_darkness;
+}
