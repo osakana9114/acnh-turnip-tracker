@@ -1,6 +1,9 @@
 @import 'modern-css-reset';
 @import '_variable';
 
+html {
+  min-height: 100%;
+}
 body {
   background-color: $c_darkness;
 }

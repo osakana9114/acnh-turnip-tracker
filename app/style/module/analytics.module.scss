@@ -1,4 +1,13 @@
 @import '../_variable';
 
 .p-analytics {
+  .o-chart {
+    position: relative;
+    height: 75vw;
+    margin: 1rem;
+
+    canvas {
+      @include fit;
+    }
+  }
 }
