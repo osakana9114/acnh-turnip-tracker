@@ -15,9 +15,12 @@ function Research() {
           {
             label: '今週のカブ価',
             data: [97, 84, 80, 76, 72, 68, 64, 59, 56, 52, 42, 42, 38],
-            borderColor: ['#19c8b9'],
-            backgroundColor: 'transparent',
+            borderColor: '#19c8b9',
             borderWidth: 3,
+            pointBorderColor: '#19c8b9',
+            pointRadius: 4,
+            pointBackgroundColor: 'white',
+            backgroundColor: 'transparent',
             lineTension: 0, // 0で直線、数値が上がると膨らんで曲線化
             spanGaps: true, // 抜けがあるとき線でつなぐ
           },
