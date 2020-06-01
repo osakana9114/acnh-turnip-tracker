@@ -1,0 +1,17 @@
+@import '../_variable';
+// 全体の枠組み
+.l-page {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+  color: $c_darkness;
+  background-color: $c_lightness;
+
+  main {
+    margin: rem(60) 0;
+  }
+}

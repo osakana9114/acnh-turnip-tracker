@@ -1,44 +1,130 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# AWS Amplify and Typescript with NextJS
 
-## Available Scripts
+[![amplifybutton](https://oneclick.amplifyapp.com/button.svg)](https://console.aws.amazon.com/amplify/home#/deploy?repo=https://github.com/zeit/next.js/tree/canary/examples/with-aws-amplify-typescript)
 
-In the project directory, you can run:
+This example shows how to build a server rendered web application with NextJS and AWS Amplify. We use AWS Amplify to generate code and to manage and consume the AWS cloud resources needed for our app. The NextJS app has dynamic and static routes to demonstrate how to load data on the server based on the incoming request.
 
-### `npm start`
+Two routes are implemented :
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- `/` : A static route that uses getInitialProps to load data from AppSync and renders it on the server (Code in [pages/index.tsx](/pages/index.tsx))
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+- `/todo/[id]` : A dynamic route that uses getInitialProps and the id from the provided context to load a single todo from AppSync and render it on the server. (Code in [pages/todo/:[id].tsx](/pages/todo/[id].tsx))
 
-### `npm test`
+## How to use
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Using `create-next-app`
 
-### `npm run build`
+Execute [`create-next-app`](https://github.com/zeit/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+npm init next-app --example with-aws-amplify-typescript nextjs-aws-amplify-typescript-app
+# or
+yarn create next-app --example with-aws-amplify-typescript nextjs-aws-amplify-typescript-app
+```
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+### Download manually
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Download the example:
 
-### `npm run eject`
+```bash
+curl https://codeload.github.com/zeit/next.js/tar.gz/canary | tar -xz --strip=2 next.js-canary/examples/with-aws-amplify-typescript
+cd with-aws-amplify-typescript
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Initialize and deploy the Amplify project
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<details>
+  <summary>If you've never used amplify before </summary>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+#### Install & Configure Amplify
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+1. [Sign up](https://portal.aws.amazon.com/billing/signup#/start) for an AWS account
+2. Install the AWS Amplify cli:
 
-## Learn More
+```sh
+npm install -g @aws-amplify/cli
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+3. Configure the Amplify cli
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```sh
+amplify configure
+```
+
+[Read More](https://aws-amplify.github.io/docs/cli-toolchain/quickstart?sdk=js)
+
+</details>
+
+#### Initialize Amplify
+
+```bash
+$ amplify init
+
+# <Interactive>
+? Enter a name for the project <PROJECT_NAME>
+? Enter a name for the environment: dev (or whatever you would like to call this env)
+? Choose your default editor: <YOUR_EDITOR_OF_CHOICE>
+? Choose the type of app that you're building (Use arrow keys)
+  android
+  ios
+❯ javascript
+? What javascript framework are you using react
+? Source Directory Path:  src
+? Distribution Directory Path: out
+? Build Command:  (npm run-script build)
+? Start Command: (npm run-script start)
+? Do you want to use an AWS profile? Y
+
+# </Interactive>
+```
+
+#### Add the API
+
+```sh
+$ amplify add api
+# <Interactive>
+? Please select from one of the below mentioned services (Use arrow keys)
+❯ GraphQL
+  REST
+? Provide API name: <API_NAME>
+? Choose an authorization type for the API (Use arrow keys)
+❯ API key
+  Amazon Cognito User Pool
+? Do you have an annotated GraphQL schema? (y/N) y
+? Provide your schema file path: ./schema.graphql
+# </Interactive>
+```
+
+#### Deploy infrastructure
+
+```sh
+$ amplify push
+# <Interactive>
+? Are you sure you want to continue? Y
+? Do you want to generate code for your newly created GraphQL API? Y
+? Choose the code generation language target (Use arrow keys)
+  javascript
+❯ typescript
+  flow
+? Enter the file name pattern of graphql queries, mutations and subscriptions (src/graphql/**/*.js)
+? Do you want to generate/update all possible GraphQL operations - queries, mutations and subscriptions (Y/n) Y
+? Enter maximum statement depth [increase from default if your schema is deeply nested] (2)
+
+# </Interactive>
+```
+
+### Install & Run
+
+```bash
+npm install
+npm run dev
+# or
+yarn
+yarn dev
+```
+
+### Edit GraphQL Schema
+
+1. Open [`amplify/backend/api/nextjswithamplifyts/schema.graphql`](amplify/backend/api/nextjswithamplifyts/schema.graphql) and change what you need to.
+2. Run `amplify push`
+3. 👍

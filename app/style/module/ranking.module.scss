@@ -1,0 +1,16 @@
+@import '../_variable';
+
+.p-ranking {
+  $prefix: 'breakpoint test ... ';
+  &::after {
+    @include mq(sm) {
+      content: '#{$prefix}sm 375';
+    }
+    @include mq(md) {
+      content: '#{$prefix}md 560';
+    }
+    @include mq(lg) {
+      content: '#{$prefix}lg 960';
+    }
+  }
+}
