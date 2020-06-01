@@ -3,6 +3,18 @@
 
 html {
   min-height: 100%;
+
+  @include mq($until: md) {
+    font-size: (16/375) * 100vw;
+  }
+
+  @include mq($from: md, $until: lg) {
+    font-size: (16/768) * 100vw;
+  }
+
+  @include mq($from: lg) {
+    font-size: 16px;
+  }
 }
 body {
   background-color: $c_darkness;

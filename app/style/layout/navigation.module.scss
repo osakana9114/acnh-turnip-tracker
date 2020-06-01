@@ -9,7 +9,7 @@
     display: flex;
     align-items: stretch;
     justify-content: center;
-    height: size(60);
+    height: rem(60);
     padding: 0;
     margin: 0;
     list-style: none;
@@ -28,7 +28,7 @@
         align-items: center;
         justify-content: center;
         height: 100%;
-        font-size: size(10);
+        font-size: rem(10);
         color: $c_lightness;
         text-decoration: none;
         background-color: $c_darkness;
