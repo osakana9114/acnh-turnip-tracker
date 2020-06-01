@@ -73,7 +73,7 @@
   ],
   "dependencies": {
     "@zeit/next-sass": "^1.0.1",
-    "aws-amplify": "1.1.32",
+    "aws-amplify": "^2.3.0",
     "chart.js": "^2.9.3",
     "date-fns": "^2.14.0",
     "eslint": "^7.0.0",

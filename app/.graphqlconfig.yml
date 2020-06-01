@@ -1,0 +1,12 @@
+projects:
+  exampletodo:
+    schemaPath: src/graphql/schema.json
+    includes:
+      - src/graphql/mutations.ts
+    excludes:
+      - ./amplify/**
+    extensions:
+      amplify:
+        codeGenTarget: typescript
+        generatedFileName: src/API.ts
+        docsFilePath: src/graphql
