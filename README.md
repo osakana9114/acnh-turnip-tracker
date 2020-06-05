@@ -10,6 +10,8 @@ $ cd app
 
 #### 初期設定
 
+[app/.env.example](app/.env.example)を複製し、`app/.env`を設置
+
 Next.js
 
 ```
@@ -33,6 +35,7 @@ app$ npm run dev
 ```
 app$ amplify push
 ```
+
 
 ## directory
 
@@ -81,3 +84,9 @@ app$ amplify push
 │ └── tsconfig.json             コマンド実行時に生成される
 └── package.json
 ```
+
+## httpsで起動できるようにする
+
+1. [サーバ証明書がない場合は作成](document/https.md)
+1. app/.env の `HTTPS_KEY` と　`HTTPS_CERT` へ作成した key と cert へのパスを指定
+1. Next.js を起動すると、設定が正しければ https で表示
