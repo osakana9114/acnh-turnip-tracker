@@ -4,10 +4,15 @@
 /node_modules
 /.pnp
 .pnp.js
+.env
 
 # Next
 .next
 out
+public/sw.js
+public/sw.js.map
+public/workbox-*
+
 
 #amplify
 amplify/\#current-cloud-backend
