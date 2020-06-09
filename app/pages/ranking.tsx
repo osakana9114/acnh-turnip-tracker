@@ -1,4 +1,4 @@
-import styles from '../style/module/ranking.module.scss';
+import styles from '@/module/ranking.module.scss';
 import { format } from 'date-fns';
 import { ja } from 'date-fns/locale';
 

@@ -1,4 +1,4 @@
-import styles from '../style/module/profile.module.scss';
+import styles from '@/module/profile.module.scss';
 
 function Research() {
   return (
