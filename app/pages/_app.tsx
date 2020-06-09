@@ -1,29 +1,19 @@
-import App, { Container } from 'next/app';
+import React, { FC } from 'react';
+import { AppProps } from 'next/app';
+import { wrapper } from '../store';
 import GlobalHeader from '@/components/layout/header';
 import GlobalNavi from '@/components/layout/navigation';
 import styles from '@/layout/page.module.scss';
 import '../style/style.scss';
 
-export default class MyApp extends App {
-  static async getInitialProps({ Component, router, ctx }) {
-    let pageProps = {};
+const WrappedApp: FC<AppProps> = ({ Component, pageProps }) => {
+  return (
+    <div className={`${styles['l-page']}`}>
+      <GlobalHeader />
+      <Component {...pageProps} />
+      <GlobalNavi />
+    </div>
+  );
+};
 
-    if (Component.getInitialProps) {
-      pageProps = await Component.getInitialProps(ctx);
-    }
-
-    return { pageProps };
-  }
-
-  render() {
-    const { Component, pageProps } = this.props;
-
-    return (
-      <div className={`${styles['l-page']}`}>
-        <GlobalHeader />
-        <Component {...pageProps} />
-        <GlobalNavi />
-      </div>
-    );
-  }
-}
+export default wrapper.withRedux(WrappedApp);
