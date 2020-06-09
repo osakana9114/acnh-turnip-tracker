@@ -2,7 +2,7 @@ import styles from '@/module/ranking.module.scss';
 import { format } from 'date-fns';
 import { ja } from 'date-fns/locale';
 
-function Research() {
+function Page() {
   return (
     <main className={`${styles['p-ranking']} l-main`}>
       <p>{format(new Date(), 'MMMdo(EEEEE) a', { locale: ja })}</p>
@@ -11,4 +11,4 @@ function Research() {
   );
 }
 
-export default Research;
+export default Page;

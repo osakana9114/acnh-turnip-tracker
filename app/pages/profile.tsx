@@ -1,6 +1,6 @@
 import styles from '@/module/profile.module.scss';
 
-function Research() {
+function Page() {
   return (
     <main className={`${styles['p-profile']} l-main`}>
       <p>自分の情報</p>
@@ -8,4 +8,4 @@ function Research() {
   );
 }
 
-export default Research;
+export default Page;

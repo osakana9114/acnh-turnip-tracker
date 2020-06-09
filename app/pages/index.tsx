@@ -4,7 +4,7 @@ import { ja } from 'date-fns/locale';
 const Chart = require('chart.js');
 import styles from '@/module/analytics.module.scss';
 
-function Research() {
+function Page() {
   const ctx = useRef(null);
   useEffect(() => {
     var myChart = new Chart(ctx.current, {
@@ -49,4 +49,4 @@ function Research() {
   );
 }
 
-export default Research;
+export default Page;
