@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { format } from 'date-fns';
 import { ja } from 'date-fns/locale';
 const Chart = require('chart.js');
-import styles from '@/module/analytics.module.scss';
+import styles from '@/pagestyle/analytics.module.scss';
 
 function Page() {
   const ctx = useRef(null);

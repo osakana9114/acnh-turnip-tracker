@@ -1,4 +1,4 @@
-import styles from '@/module/profile.module.scss';
+import styles from '@/pagestyle/profile.module.scss';
 
 function Page() {
   return (

@@ -16,8 +16,8 @@
     "baseUrl": ".",
     "paths": {
       "@/components/*": ["components/*"],
-      "@/module/*": ["style/module/*"],
-      "@/layout/*": ["style/layout/*"]
+      "@/pagestyle/*": ["style/page/*"],
+      "@/layoutstyle/*": ["style/layout/*"]
     }
   },
   "exclude": ["node_modules"],

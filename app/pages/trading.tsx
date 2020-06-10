@@ -1,4 +1,4 @@
-import styles from '@/module/trading.module.scss';
+import styles from '@/pagestyle/trading.module.scss';
 import { format } from 'date-fns';
 import { ja } from 'date-fns/locale';
 
