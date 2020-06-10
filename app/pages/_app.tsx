@@ -1,10 +1,12 @@
 import React, { FC } from 'react';
 import { AppProps } from 'next/app';
-import { wrapper } from '../store';
+// import { wrapper } from '../store';
 import GlobalHeader from '@/components/layout/header';
 import GlobalNavi from '@/components/layout/navigation';
-import styles from '@/layout/page.module.scss';
+import styles from '@/layoutstyle/page.module.scss';
 import '../style/style.scss';
+
+import { wrapper } from '../store/';
 
 const WrappedApp: FC<AppProps> = ({ Component, pageProps }) => {
   return (
