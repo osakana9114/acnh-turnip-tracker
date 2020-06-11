@@ -1,15 +1,16 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { addCount } from '@/store/count/action';
+import { addCount, resetCount } from '@/store/count/action';
 
-const AddCount = ({ count, addCount }) => {
+const AddCount = ({ count, addCount, resetCount }) => {
   return (
     <div>
       <h1>
         AddCount: <span>{count}</span>
       </h1>
       <button onClick={addCount}>Add To Count</button>
+      <button onClick={resetCount}>Reset To Count</button>
     </div>
   );
 };
@@ -21,6 +22,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => {
   return {
     addCount: bindActionCreators(addCount, dispatch),
+    resetCount: bindActionCreators(resetCount, dispatch),
   };
 };
 
