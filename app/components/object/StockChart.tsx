@@ -1,9 +1,8 @@
 import React, { useEffect, useRef } from 'react';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 const Chart = require('chart.js');
 
-const StockChart = ({ count, addCount }) => {
+const StockChart = ({ price }) => {
   const ctx = useRef(null);
   useEffect(() => {
     var myChart = new Chart(ctx.current, {
@@ -13,7 +12,7 @@ const StockChart = ({ count, addCount }) => {
         datasets: [
           {
             label: '今週のカブ価',
-            data: [97, 84, 80, 76, 72, 68, 64, 59, 56, 52, 42, 42, 38],
+            data: price,
             borderColor: '#19c8b9',
             borderWidth: 3,
             pointBorderColor: '#19c8b9',
@@ -46,13 +45,11 @@ const StockChart = ({ count, addCount }) => {
 };
 
 const mapStateToProps = state => ({
-  count: state.count.count,
+  price: state.stock.price,
 });
 
 const mapDispatchToProps = dispatch => {
-  return {
-    // addCount: bindActionCreators(addCount, dispatch),
-  };
+  return;
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(StockChart);

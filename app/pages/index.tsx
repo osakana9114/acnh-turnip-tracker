@@ -54,7 +54,7 @@ import { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import Analytics from '../components/Analytics';
-import { addCount } from '../store/count/action';
+import { addCount } from '../store/count/action.ts';
 import { wrapper } from '../store/';
 import { serverRenderClock, startClock } from '../store/tick/action';
 

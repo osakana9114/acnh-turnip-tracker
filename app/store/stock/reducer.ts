@@ -1,16 +1,20 @@
-import { stockActionTypes } from './action.ts';
+import { stockActionTypes } from './action';
 
-const tickInitialState = {
-  lastUpdate: 0,
-  light: false,
+const stockInitialState = {
+  price: [null, null, null, null, null, null, null, null, null, null, null, null, null],
 };
 
-export default function reducer(state = tickInitialState, action) {
+export default function reducer(state = stockInitialState, action) {
   switch (action.type) {
-    case stockActionTypes.TICK:
+    case stockActionTypes.ADD:
       return Object.assign({}, state, {
-        lastUpdate: action.ts,
-        light: !!action.light,
+        price: Array(13),
+      });
+    case stockActionTypes.UPDATE:
+      const priceValues: number[] = [];
+      [].slice.call(action.form).map(input => priceValues.push(input.value ? +input.value : null));
+      return Object.assign({}, state, {
+        price: priceValues,
       });
     default:
       return state;
