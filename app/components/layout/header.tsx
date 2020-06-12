@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import styles from '../style/layout/header.module.scss';
+import styles from '@/layoutstyle/header.module.scss';
 
 export default () => (
   <header className={`${styles['l-header']}`}>

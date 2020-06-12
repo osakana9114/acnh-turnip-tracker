@@ -1,14 +1,14 @@
-import styles from '../style/module/ranking.module.scss';
-import { format } from 'date-fns';
-import { ja } from 'date-fns/locale';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
-function Research() {
-  return (
-    <main className={`${styles['p-ranking']} l-main`}>
-      <p>{format(new Date(), 'MMMdo(EEEEE) a', { locale: ja })}</p>
-      <p>ここでみんなのカブ価がみられる</p>
-    </main>
-  );
-}
+// store
+import { wrapper } from '../store/';
 
-export default Research;
+// components
+import Ranking from '@/components/page/Ranking';
+
+const Page: NextPage<Props> = props => {
+  return <Ranking title="ここでみんなのカブ価がみられる" />;
+};
+
+export default connect(null, null)(Page);

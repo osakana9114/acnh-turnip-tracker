@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import styles from '../style/layout/navigation.module.scss';
+import styles from '@/layoutstyle/navigation.module.scss';
 
 export default () => {
   function svgIcon(code: 'analytics' | 'trading' | 'ranking' | 'profile') {
