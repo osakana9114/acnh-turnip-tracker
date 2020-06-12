@@ -1,7 +1,7 @@
-import React, { useEffect, useRef } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { updateStock } from '@/store/stock/action';
+import { AllState } from '@/store/';
 
 const StockForm = ({ price, updateStock }) => {
   const weekLabel = ['日', '月', '火', '水', '木', '金', '土'];
@@ -12,9 +12,9 @@ const StockForm = ({ price, updateStock }) => {
     list.push(
       <span key={`stockPrice${index}`}>
         {index === 0 ? (
-          <spam>{weekLabel[0]}</spam>
+          <span>{weekLabel[0]}</span>
         ) : index % 2 ? (
-          <spam>{weekLabel[Math.round(index / 2)]}</spam>
+          <span>{weekLabel[Math.round(index / 2)]}</span>
         ) : undefined}
         <input name={`price`} type="number" step="1" defaultValue={price[index]} />
         {!(index % 2) ? <br /> : undefined}
@@ -31,7 +31,7 @@ const StockForm = ({ price, updateStock }) => {
   );
 };
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state: AllState) => ({
   price: state.stock.price,
 });
 

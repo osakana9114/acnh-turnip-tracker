@@ -1,10 +1,6 @@
 export const stockActionTypes = {
-  ADD: 'ADD',
   UPDATE: 'UPDATE',
-};
-
-export const addStock = () => dispatch => {
-  return dispatch({ type: stockActionTypes.ADD });
+  CALCULATE: 'CALCULATE',
 };
 
 export const updateStock = e => dispatch => {
@@ -12,5 +8,12 @@ export const updateStock = e => dispatch => {
   return dispatch({
     type: stockActionTypes.UPDATE,
     form: e.target.price,
+  });
+};
+
+export const calculateStock = result => dispatch => {
+  return dispatch({
+    type: stockActionTypes.CALCULATE,
+    data: result,
   });
 };
