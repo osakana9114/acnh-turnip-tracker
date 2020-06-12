@@ -36,7 +36,7 @@ const StockChart = ({ price }) => {
         },
       },
     });
-  }, []);
+  }, [price]);
   return (
     <div className="o-chart">
       <canvas ref={ctx}></canvas>
