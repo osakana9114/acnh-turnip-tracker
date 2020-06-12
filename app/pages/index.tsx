@@ -8,10 +8,10 @@ import { bindActionCreators } from 'redux';
 import { wrapper } from '../store/';
 
 // components
-import Analytics from '../components/Analytics';
+import Analytics from '@/components/page/Analytics';
 
 const Page: NextPage<Props> = props => {
-  return <Analytics title="カブ価の推移など" linkTo="/ranking" />;
+  return <Analytics title="カブ価の推移など" />;
 };
 
 // export const getStaticProps = wrapper.getStaticProps(async ({ store }) => {

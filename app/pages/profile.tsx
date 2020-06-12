@@ -1,11 +1,27 @@
 import React from 'react';
-import styles from '@/pagestyle/profile.module.scss';
+import { NextPage } from 'next';
+
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+
+// store
+import { wrapper } from '../store/';
+
+// components
+import Profile from '@/components/page/Profile';
+
 const Page: NextPage<Props> = props => {
-  return (
-    <main className={`${styles['p-profile']} l-main`}>
-      <p>自分の情報</p>
-    </main>
-  );
+  return <Profile title="プロフィール" />;
 };
 
-export default Page;
+// export const getStaticProps = wrapper.getStaticProps(async ({ store }) => {
+//   store.dispatch(serverRenderClock(true));
+// });
+
+// const mapDispatchToProps = dispatch => {
+//   return {
+//     startClock: bindActionCreators(startClock, dispatch),
+//   };
+// };
+
+export default connect(null, null)(Page);

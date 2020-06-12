@@ -1,14 +1,14 @@
-import styles from '@/pagestyle/trading.module.scss';
-import { format } from 'date-fns';
-import { ja } from 'date-fns/locale';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
-function Page() {
-  return (
-    <main className={`${styles.trading} l-main`}>
-      <p>{format(new Date(), 'MMMdo(EEEEE) a', { locale: ja })}</p>
-      <p>収支と、売買ログ</p>
-    </main>
-  );
-}
+// store
+import { wrapper } from '../store/';
 
-export default Page;
+// components
+import Trading from '@/components/page/Trading';
+
+const Page: NextPage<Props> = props => {
+  return <Trading title="収支と、売買ログ" />;
+};
+
+export default connect(null, null)(Page);
