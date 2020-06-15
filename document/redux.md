@@ -6,6 +6,16 @@
 - [Redux](https://redux.js.org/)
 - [Nextt.js with next-redux-wrapper](https://github.com/vercel/next.js/tree/canary/examples/with-redux-wrapper)
 
+Reduxのデータの流れ
+
+<figure>
+  <img src="https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-image-store.s3.amazonaws.com%2F0%2F26095%2F984b003c-98a8-e1c9-9600-e894bb84b89e.gif?ixlib=rb-1.2.2&auto=format&gif-q=60&q=75&s=25c68bb064a2632abc0b661d9ce48219" width="400" alt="Redux. From twitter hype to production">
+  <figcaption>
+    <a href="http://slides.com/jenyaterpil/redux-from-twitter-hype-to-production#/27" target="_blank" rel="noopener">Redux. From twitter hype to production</a>
+  </figcaption>
+</figure>
+
+
 ## store
 
 ```
