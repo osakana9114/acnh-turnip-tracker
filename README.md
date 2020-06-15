@@ -64,3 +64,9 @@ app$ amplify push
 1. [サーバ証明書がない場合は作成](document/https.md)
 1. app/.env の `HTTPS_KEY` と　`HTTPS_CERT` へ作成した key と cert へのパスを指定
 1. Next.js を起動すると、設定が正しければ https で表示
+
+## 状態管理
+
+状態管理に`Redux`を導入。
+
+→[Store の構造など詳細](document/redux.md)
