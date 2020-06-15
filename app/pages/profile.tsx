@@ -18,10 +18,4 @@ const Page: NextPage<Props> = props => {
 //   store.dispatch(serverRenderClock(true));
 // });
 
-// const mapDispatchToProps = dispatch => {
-//   return {
-//     startClock: bindActionCreators(startClock, dispatch),
-//   };
-// };
-
 export default connect(null, null)(Page);
