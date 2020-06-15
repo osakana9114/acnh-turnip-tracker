@@ -151,6 +151,8 @@ API を`init`で設定していると、Next 起動時に自動生成される�
 - `index.ts` ... store 全体をまとめている親。
 - `/xxx/action.ts`,`/xxx/reducer.ts` ... それぞれの action と reducer を設置。
 
+→[Store の構造など詳細](redux.md)
+
 ## style
 
 スタイルシートのデータを格納している。

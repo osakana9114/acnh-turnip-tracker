@@ -8,6 +8,17 @@
 
 ## store
 
+```
+/store
+├── /stock
+│   ├── action.ts
+│   └── reducer.ts
+├── /xxx
+│   ├── action.ts
+│   └── reducer.ts
+└── index.ts
+```
+
 `/app/store/index.ts`を親として置き  
 各データはディレクトリを切って、 `action`,`reducer`を設置している。
 
