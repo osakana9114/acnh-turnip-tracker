@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { updateStock } from '@/store/stock/action';
 import { AllState } from '@/store/';
+import Router from 'next/router';
 
 const StockForm = ({ price, updateStock }) => {
   const weekLabel = ['日', '月', '火', '水', '木', '金', '土'];
@@ -16,17 +17,31 @@ const StockForm = ({ price, updateStock }) => {
         ) : index % 2 ? (
           <span>{weekLabel[Math.round(index / 2)]}</span>
         ) : undefined}
-        <input name={`price`} type="number" step="1" defaultValue={price[index]} />
+        <input
+          name={`price`}
+          type="number"
+          step="1"
+          min="1"
+          max="660"
+          defaultValue={price[index]}
+        />
         {!(index % 2) ? <br /> : undefined}
       </span>
     );
   });
 
+  // submit
+  async function submitForm(e) {
+    e.preventDefault();
+    const res = await updateStock(e.target.price);
+    const complete = await Router.push('/');
+  }
+
   return (
-    <form onSubmit={updateStock}>
+    <form onSubmit={submitForm}>
       <input name="hiddentest" type="hidden" value="test" />
       {list}
-      <button>カブ価書き換えテスト</button>
+      <button>実行</button>
     </form>
   );
 };

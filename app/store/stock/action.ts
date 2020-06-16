@@ -3,17 +3,16 @@ export const stockActionTypes = {
   CALCULATE: 'CALCULATE',
 };
 
-export const updateStock = e => dispatch => {
-  e.preventDefault();
+export const updateStock = payload => dispatch => {
   return dispatch({
     type: stockActionTypes.UPDATE,
-    payload: e.target.price,
+    payload: payload,
   });
 };
 
-export const calculateStock = result => dispatch => {
+export const calculateStock = payload => dispatch => {
   return dispatch({
     type: stockActionTypes.CALCULATE,
-    payload: result,
+    payload: payload,
   });
 };
