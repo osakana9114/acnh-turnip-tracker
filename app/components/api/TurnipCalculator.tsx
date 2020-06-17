@@ -14,7 +14,8 @@ function TurnipCalculator({ price }) {
         // リクエスト
         try {
           // カブ価予測API が ローカルIPでCROSになるので、fetchにmode設定。
-          const res = await fetch(`https://api.ac-turnip.com/data/?f=${str}`);
+          const res = await fetch(`/data/?f=${str}`);
+          // const res = await fetch(`https://api.ac-turnip.com/data/?f=${str}`);
           const chartData = await res.json();
           const minPattern: nmber[] = [price[0]];
           const maxPattern: nmber[] = [price[0]];
