@@ -62,7 +62,7 @@ app.prepare().then(() => {
       //   handle(req, res, { ...parsedUrl, pathname: '/img/ico_152x152.png' });
     } else if (isTurnipApi) {
       // (仮) /api/turnip-calculator/ にアクセスしたら /data/ へリダイレクト
-      res.writeHead(302, { Location: '/data/' });
+      res.writeHead(302, { Location: '/data/' + parsedUrl.search });
       res.end();
     } else {
       handle(req, res, parsedUrl); // 通常
