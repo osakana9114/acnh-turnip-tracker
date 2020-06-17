@@ -6,6 +6,7 @@ import { ja } from 'date-fns/locale';
 // component
 import StockChart from '@/components/object/StockChart';
 import TurnipCalculator from '@/components/api/TurnipCalculator';
+import StockMinWeekValue from '@/components/object/StockMinWeekValue';
 // style
 import styles from '@/pagestyle/analytics.module.scss';
 
@@ -15,6 +16,7 @@ const Page = ({ title }) => (
     <p>{format(new Date(), 'MMMdo(EEEEE) a', { locale: ja })}</p>
     <TurnipCalculator />
     <StockChart />
+    <StockMinWeekValue />
     <Link href="/analytics/form">
       <button type="button">カブ価を記録</button>
     </Link>

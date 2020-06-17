@@ -27,6 +27,7 @@ function TurnipCalculator({ price }) {
             calculateStock({
               minPattern,
               maxPattern,
+              minWeekValue: chartData.minWeekValue,
             })
           );
         } catch (err) {
