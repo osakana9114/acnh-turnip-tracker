@@ -5,7 +5,7 @@ import { bindActionCreators } from 'redux';
 import { wrapper } from '../store/';
 
 // components
-import Ranking from '@/components/page/Ranking';
+import Ranking from '@/components/page/Ranking/';
 
 const Page: NextPage<Props> = props => {
   return <Ranking title="ここでみんなのカブ価がみられる" />;

@@ -5,7 +5,7 @@ import { bindActionCreators } from 'redux';
 import { wrapper } from '../store/';
 
 // components
-import Trading from '@/components/page/Trading';
+import Trading from '@/components/page/Trading/';
 
 const Page: NextPage<Props> = props => {
   return <Trading title="収支と、売買ログ" />;

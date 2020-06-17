@@ -1,11 +1,13 @@
 import Link from 'next/link';
+import Router from 'next/router';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { updateStock } from '@/store/stock/action';
 import { AllState } from '@/store/';
-import Router from 'next/router';
+// style
+import styles from '@/pagestyle/analytics.module.scss';
 
-const StockForm = ({ price, updateStock }) => {
+const Page = ({ title, price, updateStock }) => {
   const weekLabel = ['日', '月', '火', '水', '木', '金', '土'];
 
   const list = [];
@@ -39,18 +41,21 @@ const StockForm = ({ price, updateStock }) => {
   }
 
   return (
-    <form onSubmit={submitForm}>
-      <input name="hiddentest" type="hidden" value="test" />
-      {list}
-      <div>
-        <button>実行</button>
-      </div>
-      <div>
-        <Link href="/">
-          <button type="button">もどる</button>
-        </Link>
-      </div>
-    </form>
+    <main className={`${styles['p-analytics']} l-main`}>
+      <p>{title}（←componentへ値をわたすサンプル）</p>
+      <form onSubmit={submitForm}>
+        <input name="hiddentest" type="hidden" value="test" />
+        {list}
+        <div>
+          <button>実行</button>
+        </div>
+        <div>
+          <Link href="/">
+            <button type="button">もどる</button>
+          </Link>
+        </div>
+      </form>
+    </main>
   );
 };
 
@@ -64,4 +69,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(StockForm);
+export default connect(mapStateToProps, mapDispatchToProps)(Page);

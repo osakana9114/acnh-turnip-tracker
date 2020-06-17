@@ -8,7 +8,7 @@ import { bindActionCreators } from 'redux';
 import { wrapper } from '../store/';
 
 // components
-import Analytics from '@/components/page/Analytics';
+import Analytics from '@/components/page/Analytics/';
 
 const Page: NextPage<Props> = props => {
   return <Analytics title="カブ価の推移など" />;

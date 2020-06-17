@@ -54,7 +54,6 @@ app.prepare().then(() => {
 
     const isData = pathname.match(/^\/data\//g);
     const isTurnipApi = pathname.match(/^\/api\/turnip\-calculator\//g);
-    // const isTurnipApi = pathname.match(/^\/api\/turnip\-calculator\//g);
     if (isData) {
       proxy.web(req, res); // プロキシ
       // } else if (pathname === '/apple-touch-icon.png') {

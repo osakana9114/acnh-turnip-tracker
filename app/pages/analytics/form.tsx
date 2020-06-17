@@ -2,16 +2,10 @@ import { NextPage } from 'next';
 import { connect } from 'react-redux';
 
 // component
-import StockForm from '@/components/object/StockForm';
-// style
-import styles from '@/pagestyle/analytics.module.scss';
+import Form from '@/components/page/Analytics/Form';
 
 const Page: NextPage<Props> = props => {
-  return (
-    <main className={`${styles['p-analytics']} l-main`}>
-      <StockForm />
-    </main>
-  );
+  return <Form title="カブ価を編集するフォーム" />;
 };
 
 export default connect(null, null)(Page);
