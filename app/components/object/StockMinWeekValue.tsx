@@ -4,7 +4,7 @@ import { AllState } from '@/store/';
 const StockMinWeekValue = ({ calc }) => {
   return (
     <p className="">
-      今週は<span>{calc.minWeekValue}</span>ベルまでは値上がりするかも
+      min week value : <span>{calc.minWeekValue}</span>ベル
     </p>
   );
 };
