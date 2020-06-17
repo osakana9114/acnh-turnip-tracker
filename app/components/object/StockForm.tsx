@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { updateStock } from '@/store/stock/action';
@@ -41,7 +42,14 @@ const StockForm = ({ price, updateStock }) => {
     <form onSubmit={submitForm}>
       <input name="hiddentest" type="hidden" value="test" />
       {list}
-      <button>実行</button>
+      <div>
+        <button>実行</button>
+      </div>
+      <div>
+        <Link href="/">
+          <button type="button">もどる</button>
+        </Link>
+      </div>
     </form>
   );
 };
