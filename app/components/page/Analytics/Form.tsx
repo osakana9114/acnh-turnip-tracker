@@ -36,8 +36,11 @@ const Page = ({ title, price, updateStock }) => {
   // submit
   async function submitForm(e) {
     e.preventDefault();
-    const res = await updateStock(e.target.price);
+    const payload: number[] = [];
+    [].slice.call(e.target.price).map(input => payload.push(input.value ? +input.value : null));
+    const res = await updateStock(payload);
     const complete = await Router.push('/');
+    localStorage.setItem('acnh-turnip-tracker', JSON.stringify(payload));
   }
 
   return (
