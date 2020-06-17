@@ -21,23 +21,26 @@ const httpsOptions =
     : undefined;
 
 app.prepare().then(() => {
+  // プロキシ設定 httpsでないとつながらない
+  const apiHeaders = {
+    'Access-Control-Allow-Credentials': true,
+    'Access-Control-Allow-Headers': '*',
+    'Access-Control-Allow-Methods': 'POST, GET, PUT, DELETE, OPTIONS',
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Expose-Headers': '*',
+    'Content-Encoding': 'br',
+    'Content-Type': 'application/json',
+  };
   const proxy = httpProxy.createProxyServer({
     ssl: httpsOptions,
+    // target: 'http://localhost:8888',
     target: process.env.NEXT_PUBLIC_TURNIP_API,
     changeOrigin: true,
     secure: httpsOptions ? true : false,
   });
   // proxy.listen(8081); // 別ポートでプロキシを起動
   proxy.on('proxyReq', function (proxyReq, req, res, options) {
-    res.writeHead(200, {
-      'Access-Control-Allow-Credentials': true,
-      'Access-Control-Allow-Headers': '*',
-      'Access-Control-Allow-Methods': 'POST, GET, PUT, DELETE, OPTIONS',
-      'Access-Control-Allow-Origin': '*',
-      'Access-Control-Expose-Headers': '*',
-      'Content-Encoding': 'br',
-      'Content-Type': 'application/json',
-    });
+    res.writeHead(200, apiHeaders);
   });
   proxy.on('error', function (err, req, res) {
     console.error('Proxy error:', err);
@@ -49,9 +52,18 @@ app.prepare().then(() => {
     const parsedUrl = parse(req.url, true);
     const { pathname, query } = parsedUrl;
 
-    const isApi = pathname.match(/^\/data\//g);
-    if (isApi) {
+    const isData = pathname.match(/^\/data\//g);
+    const isTurnipApi = pathname.match(/^\/api\/turnip\-calculator\//g);
+    // const isTurnipApi = pathname.match(/^\/api\/turnip\-calculator\//g);
+    if (isData) {
       proxy.web(req, res); // プロキシ
+      // } else if (pathname === '/apple-touch-icon.png') {
+      //   // (テスト) iPhone用アイコンをリダイレクトさせてみる
+      //   handle(req, res, { ...parsedUrl, pathname: '/img/ico_152x152.png' });
+    } else if (isTurnipApi) {
+      // (仮) /api/turnip-calculator/ にアクセスしたら /data/ へリダイレクト
+      res.writeHead(302, { Location: '/data/' });
+      res.end();
     } else {
       handle(req, res, parsedUrl); // 通常
     }
