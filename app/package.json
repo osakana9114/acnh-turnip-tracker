@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "dev": "node server.ts",
+    "dev": "node server.js",
     "build": "next build",
-    "start": "NODE_ENV=production node server.ts"
+    "start": "NODE_ENV=production node server.js"
   },
   "keywords": [],
   "author": "",

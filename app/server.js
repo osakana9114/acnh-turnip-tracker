@@ -9,7 +9,7 @@ const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
 const handle = app.getRequestHandler();
 
-const port = process.env.PORT || 3000;
+const port = +process.env.PORT || 3000;
 const hostname = process.env.HOSTNAME || '0.0.0.0';
 
 const httpsOptions =
@@ -48,28 +48,28 @@ app.prepare().then(() => {
     res.end();
   });
 
-  const server = (httpsOptions ? https : http).createServer(httpsOptions, (req, res) => {
-    const parsedUrl = parse(req.url, true);
-    const { pathname, query } = parsedUrl;
+  (httpsOptions ? https : http)
+    .createServer(httpsOptions, (req, res) => {
+      const parsedUrl = parse(req.url, true);
+      const { pathname, query } = parsedUrl;
 
-    const isData = pathname.match(/^\/data\//g);
-    const isTurnipApi = pathname.match(/^\/api\/turnip\-calculator\//g);
-    if (isData) {
-      proxy.web(req, res); // プロキシ
-      // } else if (pathname === '/apple-touch-icon.png') {
-      //   // (テスト) iPhone用アイコンをリダイレクトさせてみる
-      //   handle(req, res, { ...parsedUrl, pathname: '/img/ico_152x152.png' });
-    } else if (isTurnipApi) {
-      // (仮) /api/turnip-calculator/ にアクセスしたら /data/ へリダイレクト
-      res.writeHead(302, { Location: '/data/' + parsedUrl.search });
-      res.end();
-    } else {
-      handle(req, res, parsedUrl); // 通常
-    }
-  });
-
-  server.listen(port, hostname, err => {
-    if (err) throw err;
-    console.log(`> Ready on https://${hostname}:${port}`);
-  });
+      const isData = pathname.match(/^\/data\//g);
+      const isTurnipApi = pathname.match(/^\/api\/turnip\-calculator\//g);
+      if (isData) {
+        proxy.web(req, res); // プロキシ
+        // } else if (pathname === '/apple-touch-icon.png') {
+        //   // (テスト) iPhone用アイコンをリダイレクトさせてみる
+        //   handle(req, res, { ...parsedUrl, pathname: '/img/ico_152x152.png' });
+      } else if (isTurnipApi) {
+        // (仮) /api/turnip-calculator/ にアクセスしたら /data/ へリダイレクト
+        res.writeHead(302, { Location: '/data/' + parsedUrl.search });
+        res.end();
+      } else {
+        handle(req, res, parsedUrl); // 通常
+      }
+    })
+    .listen(port, hostname, err => {
+      if (err) throw err;
+      console.log(`> Ready on https://${hostname}:${port}`);
+    });
 });

@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { connect, useDispatch } from 'react-redux';
 import { calculateStock } from '@/store/stock/action';
-import { AllState } from '@/store/';
+import { AllState } from '@/store/index.ts';
 
 function TurnipCalculator({ price }) {
   const dispatch = useDispatch();
@@ -17,8 +17,8 @@ function TurnipCalculator({ price }) {
           const res = await fetch(`/api/turnip-calculator/?f=${str}`);
           // const res = await fetch(`https://api.ac-turnip.com/data/?f=${str}`);
           const chartData = await res.json();
-          const minPattern: nmber[] = [price[0] || 90];
-          const maxPattern: nmber[] = [price[0] || 110];
+          const minPattern: number[] = [price[0] || 90];
+          const maxPattern: number[] = [price[0] || 110];
           chartData.minMaxPattern.map(val => {
             minPattern.push(val[0]);
             maxPattern.push(val[1]);

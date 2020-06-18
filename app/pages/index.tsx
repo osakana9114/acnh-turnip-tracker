@@ -11,6 +11,11 @@ import { wrapper } from '../store/';
 // components
 import Analytics from '@/components/page/Analytics/';
 
+// interface
+interface Props {
+  updateStock: any;
+}
+
 const Page: NextPage<Props> = ({ updateStock }) => {
   useEffect(() => {
     const strage = localStorage.getItem('acnh-turnip-tracker');

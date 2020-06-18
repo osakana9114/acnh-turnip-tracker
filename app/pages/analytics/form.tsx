@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 // component
 import Form from '@/components/page/Analytics/Form';
 
-const Page: NextPage<Props> = props => {
+const Page: NextPage = () => {
   return <Form title="カブ価を編集するフォーム" />;
 };
 

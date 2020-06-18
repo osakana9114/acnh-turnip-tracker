@@ -3,7 +3,7 @@ import Router from 'next/router';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { updateStock } from '@/store/stock/action';
-import { AllState } from '@/store/';
+import { AllState } from '@/store/index.ts';
 // style
 import styles from '@/pagestyle/analytics.module.scss';
 

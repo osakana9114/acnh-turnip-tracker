@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { AllState } from '@/store/';
+import { AllState } from '@/store/index.ts';
 
 const StockMinWeekValue = ({ calc }) => {
   return (

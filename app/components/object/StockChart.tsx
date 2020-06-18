@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { connect } from 'react-redux';
-import { AllState } from '@/store/';
+import { AllState } from '@/store/index.ts';
 const Chart = require('chart.js');
 
 const StockChart = ({ price, calc }) => {
