@@ -30,10 +30,11 @@ const reducer = (state, action) => {
   }
 };
 
-const initStore = () => {
-  return createStore(reducer, bindMiddleware([thunkMiddleware]));
-};
+export const store = createStore(reducer, bindMiddleware([thunkMiddleware]));
 
-export type AllState = ReturnType<typeof initStore.getState>;
+// const initStore = () => createStore(reducer, bindMiddleware([thunkMiddleware]));
 
-export const wrapper = createWrapper(initStore);
+export type AllState = ReturnType<typeof store.getState>;
+
+export const wrapper = createWrapper(() => store);
+// export const wrapper = createWrapper(initStore);

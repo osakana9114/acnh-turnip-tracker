@@ -8,9 +8,13 @@ import { bindActionCreators } from 'redux';
 import { wrapper } from '../store/';
 
 // components
-import Profile from '@/components/page/Profile';
+import Profile from '@/components/page/Profile/';
 
-const Page: NextPage<Props> = props => {
+// interface
+interface Props {
+  updateStock: any;
+}
+const Page: NextPage = () => {
   return <Profile title="プロフィール" />;
 };
 

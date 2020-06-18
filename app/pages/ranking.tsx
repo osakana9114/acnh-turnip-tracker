@@ -1,3 +1,4 @@
+import { NextPage } from 'next';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
@@ -5,9 +6,9 @@ import { bindActionCreators } from 'redux';
 import { wrapper } from '../store/';
 
 // components
-import Ranking from '@/components/page/Ranking';
+import Ranking from '@/components/page/Ranking/';
 
-const Page: NextPage<Props> = props => {
+const Page: NextPage = () => {
   return <Ranking title="ここでみんなのカブ価がみられる" />;
 };
 

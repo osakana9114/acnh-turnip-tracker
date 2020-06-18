@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { connect } from 'react-redux';
-import { AllState } from '@/store/';
+import { AllState } from '@/store/index.ts';
 const Chart = require('chart.js');
 
 const StockChart = ({ price, calc }) => {
@@ -33,10 +33,9 @@ const StockChart = ({ price, calc }) => {
             borderColor: 'rgba(24,199,184, 0.2)',
             borderWidth: 0,
             pointRadius: 0,
-            pointBackgroundColor: 'white',
-            backgroundColor: 'white',
+            backgroundColor: 'transparent',
             lineTension: 0, // 0で直線、数値が上がると膨らんで曲線化
-            spanGaps: true, // 抜けがあるとき線でつなぐ
+            fill: '-1',
           },
           {
             label: '予想',
@@ -44,10 +43,9 @@ const StockChart = ({ price, calc }) => {
             borderColor: 'rgba(24,199,184, 0.2)',
             borderWidth: 0,
             pointRadius: 0,
-            pointBackgroundColor: 'white',
             backgroundColor: 'rgba(24,199,184, 0.2)',
             lineTension: 0, // 0で直線、数値が上がると膨らんで曲線化
-            spanGaps: true, // 抜けがあるとき線でつなぐ
+            fill: '-1',
           },
         ],
       },
