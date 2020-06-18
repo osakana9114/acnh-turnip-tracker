@@ -14,7 +14,7 @@ export default class MyDocument extends Document {
           <meta name="apple-mobile-web-app-title" content="ウリとまめつぶ"></meta>
           <link rel="icon" type="image/png" sizes="32x32" href="/img/ico_32x32.png" />
           <link rel="icon" type="image/png" sizes="152x152" href="/img/ico_152x152.png" />
-          <link rel="apple-touch-icon" href="img/ico_152x152.png"></link>
+          <link rel="apple-touch-icon" href="apple-touch-icon.png"></link>
           <meta name="theme-color" content="#19c8b9" />
           <meta name="format-detection" content="telephone=no" />
           <link rel="manifest" href="/manifest.json"></link>
