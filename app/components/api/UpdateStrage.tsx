@@ -2,24 +2,25 @@ import { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { AllState } from '@/store/index.ts';
 
-function UpdateStrage({ value, name, place }) {
+function UpdateStrage({ value, username, place }) {
   useEffect(() => {
     const payload = {
       stock: value,
       profile: {
-        name,
+        username,
         place,
       },
     };
+    console.log(payload);
     localStorage.setItem('acnh-turnip-tracker', JSON.stringify(payload));
-  }, [value, name, place]);
+  }, [value, username, place]);
 
   return null;
 }
 
 const mapStateToProps = (state: AllState) => ({
   value: state.stock.value,
-  name: state.profile.name,
+  username: state.profile.username,
   place: state.profile.place,
 });
 
