@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { AllState } from '@/store/index.ts';
 const Chart = require('chart.js');
 
-const StockChart = ({ price, calc }) => {
+const StockChart = ({ value, calc }) => {
   const ctx = useRef(null);
   const minPattern: number[] = calc ? calc.minPattern : [];
   const maxPattern: number[] = calc ? calc.maxPattern : [];
@@ -17,7 +17,7 @@ const StockChart = ({ price, calc }) => {
         datasets: [
           {
             label: '今週のカブ価',
-            data: price,
+            data: value,
             borderColor: '#19c8b9',
             borderWidth: 3,
             pointBorderColor: '#19c8b9',
@@ -61,7 +61,7 @@ const StockChart = ({ price, calc }) => {
         },
       },
     });
-  }, [price, calc]);
+  }, [value, calc]);
   return (
     <div className="o-chart">
       <canvas ref={ctx}></canvas>
@@ -70,7 +70,7 @@ const StockChart = ({ price, calc }) => {
 };
 
 const mapStateToProps = (state: AllState) => ({
-  price: state.stock.price,
+  value: state.stock.value,
   calc: state.stock.calc,
 });
 

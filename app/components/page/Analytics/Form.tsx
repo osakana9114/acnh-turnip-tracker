@@ -7,12 +7,12 @@ import { AllState } from '@/store/index.ts';
 // style
 import styles from '@/pagestyle/analytics.module.scss';
 
-const Page = ({ title, price, updateStock }) => {
+const Page = ({ title, value, updateStock }) => {
   const weekLabel = ['日', '月', '火', '水', '木', '金', '土'];
 
   const list = [];
 
-  price.map((val, index) => {
+  value.map((val, index) => {
     list.push(
       <span key={`stockPrice${index}`}>
         {index === 0 ? (
@@ -21,12 +21,12 @@ const Page = ({ title, price, updateStock }) => {
           <span>{weekLabel[Math.round(index / 2)]}</span>
         ) : undefined}
         <input
-          name={`price`}
+          name={`value`}
           type="number"
           step="1"
           min="1"
           max="660"
-          defaultValue={price[index]}
+          defaultValue={value[index]}
         />
         {!(index % 2) ? <br /> : undefined}
       </span>
@@ -37,7 +37,7 @@ const Page = ({ title, price, updateStock }) => {
   async function submitForm(e) {
     e.preventDefault();
     const payload: number[] = [];
-    [].slice.call(e.target.price).map(input => payload.push(input.value ? +input.value : null));
+    [].slice.call(e.target.value).map(input => payload.push(input.value ? +input.value : null));
     const res = await updateStock(payload);
     const complete = await Router.push('/');
     localStorage.setItem('acnh-turnip-tracker', JSON.stringify(payload));
@@ -47,7 +47,6 @@ const Page = ({ title, price, updateStock }) => {
     <main className={`${styles['p-analytics']} l-main`}>
       <p>{title}（←componentへ値をわたすサンプル）</p>
       <form onSubmit={submitForm}>
-        <input name="hiddentest" type="hidden" value="test" />
         {list}
         <div>
           <button>実行</button>
@@ -63,7 +62,7 @@ const Page = ({ title, price, updateStock }) => {
 };
 
 const mapStateToProps = (state: AllState) => ({
-  price: state.stock.price,
+  value: state.stock.value,
 });
 
 const mapDispatchToProps = dispatch => {
