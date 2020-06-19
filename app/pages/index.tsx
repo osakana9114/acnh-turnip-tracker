@@ -19,7 +19,8 @@ interface Props {
 const Page: NextPage<Props> = ({ updateStock }) => {
   useEffect(() => {
     const strage = localStorage.getItem('acnh-turnip-tracker');
-    const payload = JSON.parse(strage);
+    const json = JSON.parse(strage);
+    const payload = json.stock;
     if (payload) updateStock(payload);
   }, []);
 

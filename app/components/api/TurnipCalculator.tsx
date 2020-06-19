@@ -13,7 +13,6 @@ function TurnipCalculator({ value }) {
         const str: string = value.join('-').replace(/null/g, '').replace(/\-+$/g, '');
         // リクエスト
         try {
-          // カブ価予測API が ローカルIPでCROSになるので、fetchにmode設定。
           const res = await fetch(`/api/turnip-calculator/?f=${str}`);
           // const res = await fetch(`https://api.ac-turnip.com/data/?f=${str}`);
           const chartData = await res.json();

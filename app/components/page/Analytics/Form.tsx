@@ -11,8 +11,9 @@ const Page = ({ title, value, updateStock }) => {
   const weekLabel = ['日', '月', '火', '水', '木', '金', '土'];
 
   const list = [];
+  const inputList = value.length ? value : new Array<prop>(13).fill(null);
 
-  value.map((val, index) => {
+  inputList.map((val, index) => {
     list.push(
       <span key={`stockPrice${index}`}>
         {index === 0 ? (
@@ -40,7 +41,6 @@ const Page = ({ title, value, updateStock }) => {
     [].slice.call(e.target.value).map(input => payload.push(input.value ? +input.value : null));
     const res = await updateStock(payload);
     const complete = await Router.push('/');
-    localStorage.setItem('acnh-turnip-tracker', JSON.stringify(payload));
   }
 
   return (

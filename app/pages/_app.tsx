@@ -7,9 +7,12 @@ import '../style/style.scss';
 
 import { wrapper } from '../store/';
 
+import UpdateStrage from '@/components/api/UpdateStrage';
+
 const WrappedApp: FC<AppProps> = ({ Component, pageProps }) => {
   return (
     <div className={`${styles['l-page']}`}>
+      <UpdateStrage />
       <GlobalHeader />
       <Component {...pageProps} />
       <GlobalNavi />
