@@ -9,7 +9,7 @@ import { updateStock } from '@/store/stock/action';
 import { wrapper } from '../store/';
 
 // components
-import Analytics from '@/components/page/Analytics/';
+import Stock from '@/components/page/Stock';
 
 // interface
 interface Props {

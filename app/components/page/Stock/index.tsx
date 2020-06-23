@@ -8,16 +8,16 @@ import StockChart from '@/components/object/StockChart';
 import TurnipCalculator from '@/components/api/TurnipCalculator';
 import StockMinWeekValue from '@/components/object/StockMinWeekValue';
 // style
-import styles from '@/pagestyle/analytics.module.scss';
+import styles from '@/pagestyle/stock.module.scss';
 
 const Page = ({ title }) => (
-  <main className={`${styles['p-analytics']} l-main`}>
+  <main className={`${styles['p-stock']} l-main`}>
     <p>{title}（←componentへ値をわたすサンプル）</p>
     <p>{format(new Date(), 'MMMdo(EEEEE) a', { locale: ja })}</p>
     <TurnipCalculator />
     <StockChart />
     <StockMinWeekValue />
-    <Link href="/analytics/form">
+    <Link href="/stock/form">
       <button type="button">カブ価を記録</button>
     </Link>
   </main>

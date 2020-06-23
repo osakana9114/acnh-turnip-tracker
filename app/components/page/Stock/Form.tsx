@@ -5,7 +5,7 @@ import { bindActionCreators } from 'redux';
 import { updateStock } from '@/store/stock/action';
 import { AllState } from '@/store/index.ts';
 // style
-import styles from '@/pagestyle/analytics.module.scss';
+import styles from '@/pagestyle/stock.module.scss';
 
 const Page = ({ title, value, updateStock }) => {
   const weekLabel = ['日', '月', '火', '水', '木', '金', '土'];
@@ -44,7 +44,7 @@ const Page = ({ title, value, updateStock }) => {
   }
 
   return (
-    <main className={`${styles['p-analytics']} l-main`}>
+    <main className={`${styles['p-stock']} l-main`}>
       <p>{title}（←componentへ値をわたすサンプル）</p>
       <form onSubmit={submitForm}>
         {list}
