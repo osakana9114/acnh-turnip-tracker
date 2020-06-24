@@ -1,9 +1,12 @@
 import { stockActionTypes } from './action';
+import { Interface } from 'readline';
 
-const stockInitialState = {
-  value: [],
-  calc: {},
-};
+interface StockType {
+  value?: number[];
+  calc?: {};
+}
+
+const stockInitialState: StockType = {};
 
 export default function reducer(state = stockInitialState, action) {
   switch (action.type) {

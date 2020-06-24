@@ -11,8 +11,7 @@ const Page = ({ title, value, updateStock }) => {
   const weekLabel = ['日', '月', '火', '水', '木', '金', '土'];
 
   const list = [];
-  const inputList = value.length ? value : new Array<prop>(13).fill(null);
-
+  const inputList = value ? value : new Array(13).fill(null);
   inputList.map((val, index) => {
     list.push(
       <span key={`stockPrice${index}`}>
@@ -21,14 +20,7 @@ const Page = ({ title, value, updateStock }) => {
         ) : index % 2 ? (
           <span>{weekLabel[Math.round(index / 2)]}</span>
         ) : undefined}
-        <input
-          name={`value`}
-          type="number"
-          step="1"
-          min="1"
-          max="660"
-          defaultValue={value[index]}
-        />
+        <input name="value" type="number" step="1" min="1" max="660" defaultValue={val} />
         {!(index % 2) ? <br /> : undefined}
       </span>
     );

@@ -34,9 +34,6 @@ const reducer = (state, action) => {
 
 export const store = createStore(reducer, bindMiddleware([thunkMiddleware]));
 
-// const initStore = () => createStore(reducer, bindMiddleware([thunkMiddleware]));
-
 export type AllState = ReturnType<typeof store.getState>;
 
 export const wrapper = createWrapper(() => store);
-// export const wrapper = createWrapper(initStore);

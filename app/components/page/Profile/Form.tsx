@@ -16,7 +16,7 @@ const Page = ({ title, username, place, updateProfile }) => {
       place: e.target.place.value,
     };
     const res = await updateProfile(payload);
-    const complete = await Router.push('/');
+    const complete = await Router.push('/profile');
   }
 
   return (

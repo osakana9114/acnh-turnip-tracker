@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React from 'react';
 import { AppProps } from 'next/app';
 import GlobalHeader from '@/components/layout/header';
 import GlobalNavi from '@/components/layout/navigation';
@@ -9,7 +9,7 @@ import { wrapper } from '../store/';
 
 import UpdateStrage from '@/components/api/UpdateStrage';
 
-const WrappedApp: FC<AppProps> = ({ Component, pageProps }) => {
+const WrappedApp: FC<AppProps> = ({ Component, pageProps, props }) => {
   return (
     <div className={`${styles['l-page']}`}>
       <UpdateStrage />

@@ -1,9 +1,11 @@
 import { profileActionTypes } from './action';
 
-const profileInitialState = {
-  username: '?',
-  place: '?',
-};
+interface ProfileType {
+  username?: string;
+  place?: string;
+}
+
+const profileInitialState: ProfileType = {};
 
 export default function reducer(state = profileInitialState, action) {
   switch (action.type) {
