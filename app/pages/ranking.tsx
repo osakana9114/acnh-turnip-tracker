@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 // store
-import { wrapper } from '../store/';
+// import { wrapper } from '@/store/';
 
 // components
 import Ranking from '@/components/page/Ranking/';

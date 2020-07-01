@@ -3,6 +3,7 @@ import { HYDRATE, createWrapper } from 'next-redux-wrapper';
 import thunkMiddleware from 'redux-thunk';
 
 import stock from './stock/reducer';
+import profile from './profile/reducer';
 
 const bindMiddleware = middleware => {
   if (process.env.NODE_ENV !== 'production') {
@@ -14,6 +15,7 @@ const bindMiddleware = middleware => {
 
 const combinedReducer = combineReducers({
   stock,
+  profile,
 });
 
 const reducer = (state, action) => {
@@ -32,9 +34,6 @@ const reducer = (state, action) => {
 
 export const store = createStore(reducer, bindMiddleware([thunkMiddleware]));
 
-// const initStore = () => createStore(reducer, bindMiddleware([thunkMiddleware]));
-
 export type AllState = ReturnType<typeof store.getState>;
 
 export const wrapper = createWrapper(() => store);
-// export const wrapper = createWrapper(initStore);

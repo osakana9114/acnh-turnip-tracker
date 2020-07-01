@@ -160,4 +160,6 @@
 //   return { todos: [] };
 // };
 // export default App;
+
+// buildエラー対策↓
 export default {};

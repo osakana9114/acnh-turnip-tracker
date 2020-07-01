@@ -1,15 +1,18 @@
 import { stockActionTypes } from './action';
+import { Interface } from 'readline';
 
-const stockInitialState = {
-  price: [null, null, null, null, null, null, null, null, null, null, null, null, null],
-  calc: {},
-};
+interface StockType {
+  value?: number[];
+  calc?: {};
+}
+
+const stockInitialState: StockType = {};
 
 export default function reducer(state = stockInitialState, action) {
   switch (action.type) {
     case stockActionTypes.UPDATE:
       return Object.assign({}, state, {
-        price: action.payload,
+        value: action.payload,
       });
     case stockActionTypes.CALCULATE:
       return Object.assign({}, state, {

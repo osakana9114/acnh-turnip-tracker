@@ -1,6 +1,6 @@
 export const stockActionTypes = {
-  UPDATE: 'UPDATE',
-  CALCULATE: 'CALCULATE',
+  UPDATE: 'STOCK_UPDATE',
+  CALCULATE: 'STOCK_CALCULATE',
 };
 
 export const updateStock = payload => dispatch => {

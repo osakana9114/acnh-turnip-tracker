@@ -37,4 +37,5 @@
 //   }
 // };
 
+// buildエラー対策↓
 export default {};
