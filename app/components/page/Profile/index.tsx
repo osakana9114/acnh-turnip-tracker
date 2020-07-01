@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import Link from 'next/link';
+import { AllState } from '@/store/index.ts';
 // style
 import styles from '@/pagestyle/profile.module.scss';
 

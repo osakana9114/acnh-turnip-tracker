@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 // store
-import { wrapper } from '../store/';
+// import { wrapper } from '@/store/';
 
 // components
 import Profile from '@/components/page/Profile/';
