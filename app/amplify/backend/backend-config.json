@@ -1,10 +1,9 @@
 {
-	"hosting": {
-		"amplifyhosting": {
-			"service": "amplifyhosting",
-			"providerPlugin": "awscloudformation",
-			"type": "manual"
-		}
-	},
-	"api": {}
+    "hosting": {
+        "amplifyhosting": {
+            "service": "amplifyhosting",
+            "type": "cicd"
+        }
+    },
+    "api": {}
 }
