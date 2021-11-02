@@ -83,7 +83,7 @@
     "immer": "8.0.1",
     "modern-css-reset": "^1.1.0",
     "nanoid": "2.0.3",
-    "next": "^9.4.4",
+    "next": "^11.1.0",
     "next-pwa": "^2.5.0",
     "next-redux-wrapper": "^6.0.2",
     "node-sass": "^4.14.1",
